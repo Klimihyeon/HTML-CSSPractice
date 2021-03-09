@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!--checkbox관련 내용 ppt참고 복습할것-->
+</head>
+<body>
+	<form>
+		<fieldset>
+			<legend>회원정보</legend>
+			<!--아이디, 비번, 이름, 이메일, 저장버튼*-->
+		아이디 :	<input type="text" value="asdf" name="userId" size="3" maxlength="10"><!--input이 서버로 전송되는 값은 다 value이다.Map<>style에 보는 key=name"", value=value""-->
+		<br><!--br을 이렇게 하면 내가 보기에 좋다. 간단한건 뒤에 붙이고-->
+		비밀번호 : <input type="password" name="userPassword" size="15" maxlength="10" placeholder="비밀번호는 3자리 이상입니다.">
+		<br>
+		이름 : <input type="text" value="홍길동" name="userName" readonly>
+		<br>
+		이메일 : <input type="text" value="a@gmail.com" name="userEmail" disabled>
+		<br>
+		성별 : <!--어느정도 일관된 데이터를 종합받으려면 라디오로 스테레오타입을 정해놓는게 좋다.-->
+		<!--라디오 버튼 쓸때는 줄바꿔서 쓰는게 좋단다-->
+		<label for="gederMale">남자</label>		<!--label은 잊지말고 id 챙겨줘라. -->
+
+		<input type="radio" value="남자" name="userGender" id="gederMale"><!--둘중 하나만 선택하고 싶으면 세트지정'name'을 해놓아야 한다. -->
+		<label for="gederFemale">여자</label>
+		<input type="radio" value="여자" name="userGender" id="gederFemale"><!--set지정시 key값이 2개냐고? 선택된 값만 전송된다 문제 없다. -->
+		<br>
+
+		거주지역 : 
+		대전<input type="radio" value="대전" name="userLocation">
+		대전 외<input type="radio" value="대전 외" name="userLocation">
+		<br>
+		취미 : <!--체크박스는 중복체크시 list형태로 데이터값이 넘어간다.-->
+		<input type="checkbox" name="hobby">독서
+		<input type="checkbox" name="hobby">운동
+		<input type="checkbox" name="hobby">영화
+		<input type="checkbox" name="hobby" cheaked>음악
+		<input type="checkbox" name="hobby">맛집탐방
+		자격증
+		<input type="checkbox" name="license" required>교원자격 <!--summit 누르면 이 값을 작성하세요 라고 확인-->
+		<input type="checkbox" name="license">용접기능
+		<input type="checkbox" name="license">정보처리
+		<br>
+
+		프로필사진선택
+		<br>
+		<input type="file" accept="jpeg/jpg, gif/png"> <!--알아서 기능이 지원이 된다.-->
+		</fieldset>
+		<br>
+		날짜 : <input type="date"><br>
+		날짜&시간 : <input type="datetime"><br>
+		월 : <input type="month"><br>
+		시간 : <input type="time"><br>
+		주 : <input type="week"><br>
+		색상 : <input type="color"><br>
+		이메일 : <input type="email"><br>
+		전화번호 : <input type="tel"><br>
+		범위 : <input type="range"><br>
+		[숫자]신발사이즈 : <input type="number" min="230" max="300" step="10"><br>
+		url : <input type="url"><br>
+	
+		<button type="button">저장하시던지</button> <!--input때랑 조금 다르게 버튼으로 쓰려면 타입 꼭 버튼, 이랑 태그를 닫아줘야 한다. 많이 쓰니까 따로 뺸거 p태그 같은거임-->
+		<button type="button">타입안쓰면 submit</button>
+		<button type="reset">리셋</button>
+		<button type="button" onclick="alert('하고싶은말을 써주세요');">클릭이라는 이벤트</button> 
+		<!--on은 event를 표현하는 거다. onclick 클릭하는 이벤트 발생시 이거 해주세요. alert안에 ''이거 꼭 써줘라. 따옴표 관련해서는 열고 닫고 잘하면 됨. cf.&#34="-->
+
+	
+		<br>
+		<input type="button" value="저장"><br>
+		<input type="submit" value="제출"><br>
+		<input type="reset" value="초기화"><br>
+		<input type="hidden" value="****">
+		<br>
+		비고
+		<textarea rows="5" cols="10" name="etc"></textarea><!--알아서 기능이 지원이 된다. 나중에 css로 size바꿔라.-->
+		<br>
+		<select name="car"> 자동차 브랜드 : <!--name써주는거 까먹지 마라, key값을 줘야 유저가 선택한 데이터를 서버로 보낸다.-->
+			<option value="C">쉐보레</option><!--화면에 보여준 값은 그냥 선택하고 땡이다. value값을 줘야 한다.-->
+			<option value="H" selected>현대</option><!--selected를 해놓으면 초기값으로 세팅이 된다.-->
+			<option value="K">기아</option>
+		</select>
+
+
+	</form><!--일일히 하나씩 말고 한 번에 보내려는 폼 구성. default value들어가 있는 내용은 추후에 재정리-->
+</body>
+</html>
