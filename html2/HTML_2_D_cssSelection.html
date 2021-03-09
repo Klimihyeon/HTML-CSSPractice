@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<style type="text/css">
+		a:link{
+		text-decoration:none;
+		color:blue;	
+		background-color: white;
+		}
+		a:visited{
+		color:green;
+		background-color: gray;
+		}	/*갑자기 다 바뀌는 느낌이면 href url이 동일해서 그렇다*/
+		a:hover {
+		color:white;
+		background-color: blue;
+/* 		border-width: 1px;
+		border-color: red;
+		border-style: solid;
+		합쳐서 쓴게 이거다. 아무거나 해라.
+ */
+ 		border : 1px red solid;
+		
+		}
+			/*웹접근성에 따라서 영역표시 반드시 해줘라. 어디까지 눌러야 하는지 나와야 한다.
+		순서 바꿔주니까 된다. "오버쓰고 갔다오면 비지티드니까 바꾸지마." 이거였는데 스타일 주고 덮어쓰면 
+		제일 마지막에 주는 스타일이 먹히는 거다. 순서 중요하다.*/
+		body{
+			font-size:medium;
+		}
+		p#t1{
+			font-size:1.0em;
+		}
+		p.t2{
+			font-size:1.5em;
+		}
+		p#t3{
+			font-size:2.0em;
+		}
+	
+		
+	</style>
+
+</head>
+<body>
+	<a href="https://www.google.com/" target="_blank">겨울왕국</a><br>
+	<a href="http://www.todayhumor.co.kr/board/list.php?table=bestofbest" target="_blank">눈의여왕</a><br>
+	<a href="http://web.humoruniv.com/main.html" target="_blank">라푼젤</a><br>
+	<a href="https://okky.kr/" target="_blank">라따뚜이</a><br>
+	<a href="D:\A_TeachingMaterial\5.JQuery\workspace\HtmlPro\WebContent\html" target="_blank">라따뚜이2</a><br>
+	<p id="t1" title="" class=""> paragraph</p>
+	
+	<p id="" title="" class="t2"> paragraph</p>
+	
+	<p id="t3" title="" class=""> paragraph</p>
+	
+</body>
+</html>
