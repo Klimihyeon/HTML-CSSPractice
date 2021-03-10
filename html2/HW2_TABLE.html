@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<style type="text/css">
+/* 		tr에는 스타일 뭐 줘도 별로 안먹힌다, td랑 th에 주는게 좋다.
+		높이는 tr에 주는게 좋다. 쓸때 상위개념부터 써줘라.*/
+		table, th, td{
+			border:1px solid red;	
+			border-collapse: collapse;
+		}
+/* 		table background-color로 선이 그려지는 신기한 마술. */
+		table {
+			border-collapse: collapse;
+		}
+/* 		가상클래스 이용하기 */
+		table tr:first-child{
+			background-color: yellow;
+		}
+		table tr:nth-child(2n){
+			background-color: lightgreen;
+		}
+/* 		
+		*n은 0부터.
+		tr:nth-child(5) 5번째 테이블
+		tr:nth-child(2n) 짝수 
+		tr:nth-child(2n+1) 홀수
+		tr:nth-child(even) 짝수
+		tr:nth-child(odd) 홀수		
+ */		
+ 		tr{
+			height:50px;
+		}
+		th{
+			width:300px;
+			text-align: center;
+		}
+		th{
+			background-color: yellow;
+		}	
+	</style>
+	</head>
+	<body>
+			<ul>
+				<li>가상 클래스 이용하기</li>
+			</ul>
+		<table>
+			<tr>
+				<th>알라딘</th>
+				<th>임꺽정</th>
+				<th>개나리</th>
+				<th>홍길동</th>
+			</tr>
+			<tr class>
+				<td>패밀리</td>
+				<td>스타일</td>
+				<td>텍스트</td>
+				<td>볼드체</td>
+			</tr>
+			<tr class>
+				<td>선택자</td>
+				<td>인라인</td>
+				<td>패밀리</td>
+				<td>요소들</td>
+			</tr>
+			<tr class>
+				<td></td>
+				<td></td>
+				<tD></td>
+				<td></td>
+			</tr>
+				
+		
+		
+		
+		
+		</table>
+	</body>
+</html>
