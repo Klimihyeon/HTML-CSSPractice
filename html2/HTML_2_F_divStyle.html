@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<style type="text/css">
+	p{
+		background-color: yellow;
+		width: 100px;
+		height:50px;
+		
+	}
+/* 	위와 아래 비교하면 아래가 밀려있다. 
+즉, width는 내용에 대한 속성만 들어간다.
+*/
+/*div는 아무런 속성에 영향이 없다. 꾸미기 전까지는.*/
+ 	#target{
+		background-color: lightgreen;
+		height:50px;
+
+	}
+ 	#target1{
+		background-color: lightgreen;
+		width:100px;
+		border: 1px solid red;
+		height:50px;
+
+	}
+	#target2{
+		background-color: lightgreen;
+		width:100px;
+		border: 1px solid red;
+		height:50px;
+		padding:10px;
+		border-color: lime;
+		border-width: 3px;
+		border-style: dashed;
+	}
+	#target3{
+		background-color: red blue green yellow;
+		width:100px;
+		height:50px;
+		padding:10px;
+		margin:20px;
+	}
+	.dot{
+		border: 1px dotted red;
+	}
+	.dot-left{
+		border-left: 1px dotted red;
+	}
+	.style{
+		border-style: double;
+	}
+	.style2{
+		border-style: double dotted;
+	}
+	.style3{
+		border-style: double dotted groove;
+		border-color: red black green;
+	}
+	.style4{
+		border-style: double dotted groove ridge;
+		border-color: red black green blue;
+	}
+	.radius{
+		border-radius : 10px;
+		border-bottom-left-radius: 5px;
+	}
+	.padding{
+		padding: 20px;
+	}
+	
+/* 	border style 4개쓰면 순서 위, 오른쪽, 아래, 왼쪽 
+	3개쓰면 top right left bottom
+	2개만 쓰면 top,bottom / right,left*
+	1개만 쓰면 당연히 all/	
+	
+/* 	보더색 지정안하면 기본으로 검정
+개발자 도구 들어가서 라인 클릭하고 target 확인해봐라. 
+styles에서 수정하면서 볼 수 있다. style copy떠라 cf. bootstrap*/
+	
+	</style>
+	
+	
+	
+	</head>
+	<body>
+		<p> 이것은 p 요소입니다.</p>
+		<br>
+		<div id="target">이것은 div 요소입니다.</div>
+		<br>	
+		<div id="target1">이것은 width 요소입니다.</div>
+		<br>	
+		<div id="target2">이것은 width+padding 요소입니다.</div>	
+		<br>	
+		<div id="target3">이것은 width+padding+margin 요소입니다.</div>	
+		
+		<hr>
+		<p>보더 스타일 연습</p>
+		<p class="dot">dotted</p>
+		<p class="dot-left">dotted-left</p>
+		<p class="style">style:double</p>
+		<p class="style2">style2:double dotted</p>
+		<p class="style3">style3:double dotted groove</p>
+		<p class="style4">style3:double dotted groove ridge</p>
+		<p class="style4 radius">style3:double dotted groove ridge</p>
+		<p class="style padding">style3:double dotted groove ridge</p>
+	
+	</body>
+</html>

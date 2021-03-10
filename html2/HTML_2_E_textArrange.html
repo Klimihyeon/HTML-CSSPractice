@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<style type="text/css">
+	h1{
+		text-align: center;
+	}
+
+	right{
+		text-align: right;
+	}
+	p.left{
+		text-align: left;
+		text-decoration:line-through;
+	}
+/* 	<!--default left.--> */	
+ 	p.inherit{
+		text-align: inherit;
+	}
+	.under{
+		text-decoration: underline;
+	}
+	.shad{
+		text-shadow: 5px 5px 5px orange;
+	}
+	.break{
+		word-break: break-all;
+	}
+	.wrap{
+		word-wrap: break-word;
+	}
+	p {
+		width:140px;
+		border : 1px solid #000016;
+	}
+	
+/* 	p를 안쓰면 under라는 모든 클래스에 적용이 되는 것이다.
+class는 다 공유, id는 딱 하나.
+ */	
+	</style>
+	
+	
+</head>
+<body>
+	<h1>텍스트정렬예제</h1>
+	<p class="right">2020년3월8일</p>	
+	<p class="left">김이현</p>
+	<p class="right under">홍길동</p>
+<!-- 	이러면 right 클래스와 under 클래스 동시에 갖게 된다.-->
+ 	<p class="inherit">
+		동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라만세
+		무궁화 삼천리 화려강산 대한사람 대한으로 길이 보전하세</p>
+		<p><span class="shad">쉭! 이거슨 입에서 나는 소리가 아니여 쉭쉭!</span> 
+		주먹이 바람을 가르면서 나는 소리인 것이여</p>
+	<p class="word">  this paragraph contains some text. Ths lines will wqqqqqqqqqqqqqqqqqqqq
+	break at a character.</p>
+	<p class="word wrap">  this paragraph contains some text. Ths lines will wqqqqqqqqqqqqqqqqqqqq
+	break at a character.</p>
+	<p class="word break">  this paragraph contains some text. Ths lines will wqqqqqqqqqqqqqqqqqqqq
+	break at a character.</p>
+	
+
+
+
+
+
+
+
+
+</body>
+</html>
