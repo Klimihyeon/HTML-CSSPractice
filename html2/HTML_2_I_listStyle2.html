@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<style type="text/css">
+		ul {
+			list-style:none;
+/* 			리스트 스타일 none이라고 하면 땡땡이가 없어진다. */
+			border-top: 1px solid;			
+			border-top-color: red;
+			border-bottom: 2px solid;
+			border-bottom-color: red;
+			text-align:center;
+			padding: 10px 0px;
+		}
+		ul li{
+			display: inline;			 
+			/* border:1px solid; */
+			/* 팁.보더를 먼저 주고 패딩이나 마진 어떻게 할지 보고 지우면 된다.  */
+			padding: 0px 15px;
+			margin: 0px 5px;
+			letter-spacing: 5px;
+			text-transform: uppercase;
+			
+/* 			마진을 주면 칸과 칸 사이가 떨어진다.*/		
+
+		}
+		ul li a{
+			text-decoration: none;
+			color:black;
+			font-family:serif;
+		} /*ul에 li의 a를 지정해줘라.*/
+		ul li a:hover {
+			text-decoration: underline;
+			color:maroon;
+			font-size:1.2em;
+			
+		}
+	
+	</style>
+	</head>
+	<body>
+			<ul>
+			<li><a href="#">Home</a></li>
+			<li><a href="#">Blog</a></li>
+			<li><a href="#">About</a></li>
+			<li><a href="#">Contact</a></li>
+		</ul>
+		<br>
+	</body>
+</html>
