@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<style type="text/css">
+		table, td, th {
+			border: 1px dotted black;
+			/* tr에는 보더를 넣어도 안먹힌다. td th 이친구들 다 적용 시켜야 한다.*/	
+			width: 300px;
+			font-family: "Trebuchet Ms", sans-serif;
+			padding :10px;
+			margin:10px;
+			
+		}
+		table{
+			border-collapse: collapse;
+			/* collapse : 합치고 seprate : 분리한다. 
+			얘는 테이블에다만 해주는게 좋다.*/				
+		}
+		caption{
+			caption-side: bottom;
+			/* top, bottom 만 이동 가능하다.*/
+		}
+		th{
+			background-color: navy;
+			color:white;	
+
+		}
+		td{
+
+			text-align: center;
+			background-color: aqua;
+		}
+		tr.odd td{			
+			background-color: lime;
+		}
+		tr.even td{			
+			background-color: maroon;
+			color:white;
+		}
+	
+	
+	</style>
+	</head>
+	<body>
+	<h1>테이블 스타일 연습</h1>
+	<table>
+		<caption>VIP고객리스트</caption>
+		<tr>
+			<th>이름</th>
+			<th>이메일</th>
+		</tr>
+		<tr class="odd">
+			<td>홍길동</td>
+			<td>hong@gmail.com</td>
+		</tr>
+		<tr class="even">
+			<td>아이유</td>
+			<td>iu@naver.com</td>
+		</tr>
+		<tr class="odd">
+			<td>이지은</td>
+			<td>iu2@naver.com</td>
+		</tr>
+		<tr class="even">
+			<td>김민종</td>
+			<td>kmj@naver.com</td>
+		</tr>
+		<tr class="odd">
+			<td>정영인</td>
+			<td>kyi@naver.com</td>
+		</tr>
+		<tr class="even">
+			<td>전재수</td>
+			<td>jjs@naver.com</td>
+		</tr>
+
+	</table>
+	
+	</body>
+</html>

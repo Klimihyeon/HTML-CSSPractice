@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+		<style type="text/css">
+			div{
+				position:relative;
+				
+			}
+			img{
+				width:200%;
+				opacity: 0.5;
+				
+				
+			}
+			p{
+				position:absolute;
+				top:100px;
+				left:100px;	
+				margin:0px;
+						
+			}
+/*absolute는 자기를 감싸고 있는것(부모창)에 대해서 따라닌다. 
+그러나 포지션 속성이 있는 부모에게만 따라다닌다. 
+이미지에 종속적으로 position 하고 싶으면
+상위 속성을 만들고 position rerlative를 해줘야 한다. */
+		
+		
+		</style>
+	
+	</head>
+	<body>
+		<h1>position</h1>
+		<div>
+<!-- 		img를 p가 따라다니지 않는다. div를 통해 관계를 설정해주자. -->
+			<img src="../../images/1.png">
+			<p>이 글자는 이미지 위에 있음.</p>
+		</div>
+	
+	
+	</body>
+</html>
