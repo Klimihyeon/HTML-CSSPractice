@@ -8,21 +8,26 @@
 				background-color: pink;
 			}
 			#left{
-				width: 49%;
-				height:1000px;
+				width: calc(50% - 12px);
+				height:500px;
 				float:left;
 				overflow:auto;
 				border:3px dotted red;
 				word-break:auto;
+				margin:2px;
 			}
+/* 			calc(50% - 12px) *width를 자동으로 계산해준다. */
+/* 			보더 양쪽 3씩 6빼주고 중간 마진 2씩 4 빼주면 2여유  
+			스페이스 안해주면 안먹힌다. -앞에 스페이스 띄워라.*/
 			#right{
-				width: 49%;
-				height:1000px;
+				width: calc(50% - 9px);
+				height:500px;
 				float:right;
 				overflow:auto;
 				border:3px dotted red;
 				word-break:auto;
-
+				margin:2px;
+				
 			}
 			span:nth-child(2n){
 				color:red;
@@ -32,9 +37,16 @@
 				color:white;
 				background-color: red;
 			}
+			img{
+				width:98%;
+			}
+			div{
+				position:relative;
+			}
 	</style>
 	</head>
 	<body>
+		<div>
 		<section id="left">
 			<h1>사자</h1>
 			<img src="images/lol.jpg">
@@ -47,5 +59,6 @@
 			<p>아시아[8]에 서식하는 <span>식육목(食肉目) 고양잇과의 포유류.</span> 현존하는 모든 고양잇과 동물들 중 가장 큰 동물로 수컷의 무게는 100~360 kg, 암컷의 무게는 70~200 kg 정도 나간다. 또한 IUCN 멸종 위기 등급 EN인 멸종 위기 종이기도 하다."호랑이"의 어원에는 여러 설이 있으나 범을 뜻하는 虎와 이리를 뜻하는 狼에 접미사가 붙어(虎+狼+이) 육식 맹수를 가리키던 것이 점차 범 대신 호랑이라고 부르게 된 것으로 본다. 불교 용어로는 대충(大蟲)[9]이라고 부른다. 중국 소설 수호지에는 '모대충(母大蟲)'이란 별명을 가진 고대수라는 여자 호걸이 등장하는데, 모대충이란 말도 '암호랑이'라는 뜻. 같은 작품에 등장하는 설영 역시 별명이 병대충(病大蟲 - 호랑이만큼이나 용맹한 자)이다.
 			</p>
 		</section>
+		</div>
 	</body>	
 </html>
