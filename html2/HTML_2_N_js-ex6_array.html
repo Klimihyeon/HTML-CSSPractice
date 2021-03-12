@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+<meta charset="UTF-8">
+<title>배열 정의</title>
+<style>
+</style>
+</head>
+<body>
+	<script>
+		//배열 정의 방법
+		var fruits1 = ["사과", "배", "포도"];
+		
+		var fruits2 = new Array("사과", "배", "포도");
+		
+		var fruits3 = new Array();
+		fruits3[0] ="사과";
+		fruits3[1] ="배";
+		fruits3[2] ="포도";
+		
+		for(var i=0; i < fruits3.length; i++){			
+			document.write(fruits3[i] + "<br>");
+		}
+		for(x in fruits3){
+			document.write(fruits3[x] + "<br>");
+		}
+	</script>
+</body>
+</html>
