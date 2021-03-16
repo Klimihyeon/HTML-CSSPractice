@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+<meta charset="UTF-8">
+<title>객체생성방법</title>
+<style>
+</style>
+<script type="text/javascript">
+	// 상수로 객체 생성
+	var myCar= {
+		model : "GV80"
+		, color : "blue"
+		, year : 2002
+		, speed : 30
+		, brake : function (){
+			// 속도줄이기(speed)
+			this.speed -= 10;
+		//this.라고 하면 myCar.이 되는 것.
+		}
+		, accel : function (){
+			// 속도올려(speed)
+			this.speed += 10;
+
+		}
+	}; //myCar 객체 정의
+	
+	document.write(myCar.color);
+	myCar.color = "red";
+	document.write(myCar.color);
+	
+	document.write(myCar.speed);
+	myCar.accel();
+	document.write(myCar.speed);
+	//생성자로 객체 생성
+	function Car(model, color,speed) {
+		//객체의 속성 생성자(클래스)개념으로 쓰려면 대문자로 써라.
+		
+		this.model = model;
+		this.speed = speed;
+		this.color = color;
+		
+		this.brake = function () {
+			this.speed -=10;			
+		}
+		this.accel = function () {
+			this.speed +=10;
+		}
+		
+	}
+	
+	var hongCar = new Car("GV70","red",0);
+	var leeCar = new Car("G80","blue",100);
+	
+	hongCar.color = "white";
+	hongCar.brake();
+	
+	//객체의 표시방법.
+	/* 	객체 속성 및 메소드 추가
+	기존에 존재하고 있던 객체에도 속성을 추가 할 수 있다.
+	생성자 함수는 변경할 필요가 없다.
+	myCar.model; 
+	myCar["model"]; 로도 표현이 가능하다.
+	var myArray = Object.values(person);
+	
+ */
+		//object를 배열로 변환 - object.values()
+		var person = {
+			name : "홍길동"
+			,age : 30
+			,city : "대전"
+			,nation : "대한민국"
+			,job : "백수"
+		}
+		//속성을 한 줄씩 내려쓰는게 좋다. ,가 앞에 있으면 삭제시 편리하다.
+		//다음줄에 영향을 미치지 않기 때문. ,를 뒤에 찍으면 잘 안보인다.ez2err
+
+			var tmp = Object.values(person);
+			alert(tmp);
+			document.write(tmp);
+		//***event를 주면서 document.write를 쓰면 페이지가 새로 쓰인다. ?
+		//개발자 도구 console에서 person이라고 쓰면 상기 정의한 객체가 나온다.
+		//-person {name : "홍길동" ,age : 30 ,city : "대전"}
+		//-Object.values(person) (3)["홍길동",30,"대전"]
+		//-Object.values(person).length 5
+		//Ob.val 디버깅 할때 많이 쓰니까 꼭 알아둬라.
+				
+		//object를 배열로 변환 - Object.values()
+		document.write("<br>");
+		tmp =JSON.stringify(person);
+		document.write(tmp);
+		//{"name":"홍길동","age":30,"city":"대전","nation":"대한민국","job":"백수"}
+		//""으로 감싸진것을 보면 문자열로 바뀐걸 알 수 있다.중괄호부터 문자열이다.
+		//console >> JSON.stringify(person);
+		
+</script>
+
+
+</head>
+<body>
+	<script>
+		
+	</script>
+</body>
+</html>
