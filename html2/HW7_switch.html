@@ -2,13 +2,40 @@
 <html lang="kr">
 <head>
 <meta charset="UTF-8">
-<title>title name</title>
+<title>switch</title>
 <style>
 </style>
 </head>
 <body>
 	<script>
+	var x = parseInt(prompt("점수를 입력해주세요. 0~100 사이"));
+	var y = parseInt(x/10);
+		if (y<=5)y=5;
+		switch (y) {
+		case 9 :
+			document.write("A");		
+			break;
+		case 8 :
+			document.write("B");		
+			break;
+		case 7 :
+			document.write("C");		
+			break;
+		case 6 :
+			document.write("D");		
+			break;
+		case 5 :
+			document.write("F");		
+			break;
+		default:
+			break;
+		}
+		/*이렇게 표현도 좋다. 변수를 grade, score로 나누면 어떨까?
+		case 10:
+		case 9:"A" break;
+		default:"F" break;*/
 		
 	</script>
+		
 </body>
 </html>

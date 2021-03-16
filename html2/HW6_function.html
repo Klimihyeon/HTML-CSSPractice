@@ -2,28 +2,39 @@
 <html lang="kr">
 <head>
 <meta charset="UTF-8">
-<title>title name</title>
+<title>if문제</title>
 <style>
 </style>
 </head>
 <body>
-	<h1> 덧셈계산기</h1>
-	첫번째 정수 <input type="text" id="num1"><br>
-	두번째 정수 <input type="text" id="num2"><br>
-	합계 <input type="text" id="sum"><br>
-	<button type="button" onclick="sum();">계산</button>
-	
-	<script>
-		function sum() {
-			var num1 = document.getElementById("num1");
-			var x = num1.value;
-			var num2 = document.getElementById("num2");
-			var y = num2.value;
-
-			var sum = parseInt(x) + parseInt(y);
-			document.getElementById("sum").value = sum;
-
-		}
+	<script>	
+	var x = parseInt(prompt("첫번째 숫자를 입력하세요."));
+	var op = prompt("연산자를 입력하세요. +,-,*,/,% 중 택1");
+	var y = parseInt(prompt("두번째 숫자를 입력하세요."));
+// 	var를 안쓰면 전역변수로 자동으로 인지하긴 한다. 근데 다른페이지에도 적용될 가능성이 높다.
+// == : 값이 같으면 pass, === : 값이 같고 유형도 같으면 pass;
+// cf. typeof 로 유형을 찾기도 한다. 
+// parseInt바로 받으면 숫자가 아닌걸 받았을 때 에러난다. 
+	if(op === "+"){
+		var sum =x + y;
+		alert(x +"" + op +""+ y +"=" + sum);
+	} 
+	if(op === "-"){
+		var min =x - y;
+		alert(x +"" + op +""+ y +"=" + min);
+	}
+	if(op === "*"){
+		var mul =x * y;
+		alert(x +"" + op +""+ y +"=" + mul);
+	}
+	if(op === "/"){
+		var div =x / y;
+		alert(x +"" + op +""+ y +"=" + div);
+	}
+	if(op === "%"){
+		var rem =x % y;
+		alert(x +"" + op +""+ y +"=" + rem);
+	}
 	</script>
 </body>
 </html>
