@@ -1,0 +1,82 @@
+l,k..,lk,.l<!DOCTYPE html>
+<html lang="kr">
+<head>
+<meta charset="UTF-8">
+<title>Rock Paper Scissors</title>
+<style>
+</style>
+</head>
+<body>
+	<script>
+	var a =	prompt("첫번째 사람의 가위, 바위, 보를 선택해주세요");
+	var b =	prompt("두번째 사람의 가위, 바위, 보를 선택해주세요");
+	var S = "가위";
+	var R = "바위";
+	var P = "보";
+	var res = "";
+	var even = "비겼습니다.";
+	
+	if(a === "가위") a=S;
+	if(a === "바위") a=R;
+	if(a === "보") a=P;
+	if(b === "가위") b=S;
+	if(b === "바위") b=R;
+	if(b === "보") b=P;
+	
+	//a R	
+	if(a===R && b===R){ 
+		res = even;
+		a = "바위";
+		b = "바위";
+	} 
+	if(a===R && b===S){ 
+		res = "첫번째 사람이 이겼습니다.";
+		a = "바위";
+		b = "가위";
+	} 
+	if(a===R && b===P){ 
+		res = "두번째 사람이 이겼습니다.";
+		a = "바위";
+		b = "보";
+	} 
+	//a S
+	if(a===S && b===R){ 
+		res = "두번째 사람이 이겼습니다.";
+		a = "가위";
+		b = "바위";
+	} 
+	if(a===S && b===S){ 
+		res = even;
+		a = "가위";
+		b = "가위";
+
+	} 
+	if(a===S && b===P){ 
+		res = "첫번째 사람이 이겼습니다.";
+		a = "가위";
+		b = "보";
+	} 
+	//a P
+	if(a===P && b===R){ 
+		res = "첫번째 사람이 이겼습니다.";
+		a = "보";
+		b = "바위";
+	} 
+	if(a===P && b===S){ 
+		res = "두번째 사람이 이겼습니다.";
+		a = "보";
+		b = "가위";
+	} 
+	if(a===P && b===P){ 
+		res = even;
+		a = "보";
+		b = "보";
+	} 
+	document.write("첫번째 사람은 "+ a +"를 내고 "
+			+ "두번째 사람은 "+ b + "를 내어 "
+			+ "결과는 " + res);
+	//이게 최선이었을까. 메서드 마렵다.
+	
+	</script>
+</body>
+</html>

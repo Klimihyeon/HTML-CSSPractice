@@ -7,51 +7,123 @@
 </style>
 </head>
 <body>
-<h1>1.1부터 10까지의 합을 구하는 프로그램을 작성하시오</h1>
-	<script>
-	var sum =0;
+	<h1>1.1부터 10까지의 합을 구하는 프로그램을 작성하시오</h1>
+		<script>
+		var sum1 =0;
+		
+		for(var i=1; i<=10; i++){
+				sum1 += i; 
+		}
+		</script>
+	<button onclick="alert(sum1)"> 1번 정답.</button>;			
+		
+	<h1>2.1부터 200까지의 짝수의 합을 구하는 프로그램을 작성하시오 ()continue이용)</h1>
+		<script>
+		var sum2a =0;	
+			for(var i=1; i<=200;i++){
+				if(i%2 == 1){
+					continue;
+				}
+				else{
+					sum2a += i;
+					} 
+			}
 	
-	for(var i=1; i<=10; i++){
-			sum += i; 
-	}
-	alert(sum);
-	</script>
-<h1>2.1부터 200까지의 짝수의 합을 구하는 프로그램을 작성하시오 ()continue이용)</h1>
-	<script>
-	var sum =0;	
-		for(var i=1; i<=200;i++){
+		var sum2b =0;	
+		var i=1;
+		while(i<200){
+			i++;
 			if(i%2 == 1){
 				continue;
 			}
 			else{
-				sum += i;
+				sum2b += i;
 				} 
 		}
-	alert(sum);
+		</script>
+	<button onclick="alert(sum2a)"> 2-1(for)번 정답.</button>;			
+	<button onclick="alert(sum2b)"> 2-2(while)번 정답.</button>;			
 
-	var sum =0;	
-	var i=1;
-	while(i<200){
-		i++;
-		if(i%2 == 1){
-			continue;
+	<h1>3.사용자가 입력한 값을 계속 더하고, 사용자가 0을 입력하면 그때까지 누적된 값을 출력하는 프로그램을 작성하시오.</h1>
+	<button onclick="func();"> 3번 실행.</button>;	
+		<script>
+		function func(){
+		var sum3 = 0;
+			while(true){
+				var input = prompt("숫자를 입력하세요.")	
+					x = parseInt(input);	
+					sum3 += x;	
+					
+					if(input == 0){
+						alert(sum3)
+						break;
+					}
+			}
 		}
-		else{
-			sum += i;
-			} 
-	}
-alert(sum);
-	</script>
-<h1>3.사용자가 입력한 값을 계속 더하고, 사용자가 0을 입력하면 그때까지 누적된 값을 출력하는 프로그램을 작성하시오.</h1>
-	<script>
-	while(input !=0){
-		var input = prompt("숫자를 입력하세요.")	
-			x = parseInt(input);	
-			sum += x;	
-		if(input ==0){
-			alert(sum);
-			break;}
-	}
-	</script>
+		</script>
+	<h1>4.다중 for문을 이용해서 1~10까지 중 i와 k의 더한 합이 3의 배수일때만 출력(continue)</h1>
+		<script>
+		var sum4a = 0;
+		var sumList1 = new Array();
+
+		for(var i=1; i <= 10; i++){
+			for(var k=1; k<=10; k++){
+				sum4 = i+k;
+			if(sum4%3 ==1){
+				continue;
+			}
+			if(sum4%3 ==2){
+				continue;
+			}
+			//굳이 continue 써야 하는 이유는 뭘까?
+			if(sum4%3 == 0){
+				sumList1.push(sum4)};	
+
+			}
+		}		
+		</script>
+		<button onclick="alert(sumList1)"> 4번 정답(array).</button>;			
+	<h1>5.1~100까지 중 2의 배수이면서 3의 배수인것만 출력</h1>
+		<script>
+		var sumlist2 = new Array(); 
+		var calc = 10*(10-1)/2;
+		for(var i=1; i <= 100; i++){
+			if(i%2 == 0){
+				if(i%3==0){
+				sumlist2.push(i);
+				};	
+			}	
+		}
+		</script>
+		<button onclick="alert(sumlist2)"> 5번 정답.</button>;			
+	<h1>6.두 수를 입력(prompt) 두 수의 합이 100이상 일때만 출력 continue를 이용, 두 수 모두 0이 되면 입력종료</h1>
+		<script>
+		function func2(){
+			var sum5 = 0;
+				while(true){
+					var input1 = prompt("숫자를 입력하세요.");	
+					var input2 = prompt("숫자를 입력하세요.");	
+						x = parseInt(input1);	
+						y = parseInt(input2);	
+						sum5 = x + y;	
+						
+						if(x == 0 && y == 0){
+							alert("종료합니다.");					
+							break;
+	
+						}
+						if(sum5 < 100){
+							alert(sum5 + "두 수의 합이 100 미만입니다.");
+							continue;
+						}
+						if(sum5 >= 100){
+							alert("두 수의 합은 " + sum5);
+						}
+				}
+			}
+		</script>
+		<button onclick="func2();"> 6번 실행.</button>;			
+		
+	
 </body>
 </html>
