@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+<meta charset="UTF-8">
+<title>date</title>
+<style>
+</style>
+	<script>
+//1day / 24 = 1hour / 60  = 1minute / 60 = 1sec / 1000 = 1milsec  
+//		var d1 = new Date(2021,7,21,0,0,0);
+		// 0월 부터 시작한다. 7 = 8월이다.2111213331133
+		var today = new Date();
+		//날짜가 얼마나 지났는지 확인하려면 밀리세컨으로 바꿔야 한다.
+		var time = today.getTime(); 
+		document.write(today + "<br>");
+				
+		document.write(time + "<br>");
+		document.write("<hr>")
+		//3일 뒤 날짜 계산
+		//3일을 시간(millyseconds)으로 변환
+		var addTime = 3 *24 *60 * 60 *1000;
+		
+		var resultTime = time + addTime;
+		var resultDay = new Date(resultTime);
+		
+		document.write(resultTime + "<br>");
+		document.write(resultDay + "<br>");
+		//날짜 비교하기
+		function checkDate() {
+		// 오늘 날짜와 구입일자를 비교하려면 시간으로 바꿔야 한다.
+		// 구입일자
+			var buyDate = document.getElementById("buyDate").value;
+			//구입일자를 시간으로 바꾸기
+//			new Date(buyDate) -> 2020-03-16을 Date타입으로 바꿔주는 것.
+				var buyTime = (new Date(buyDate)).getTime();
+				//()로 잘 묶어줘라. new 하고 한칸 띄었다. 
+				
+		// 오늘 날짜
+			var curDate = new Date();
+			//오늘날짜를 시간으로 바꾸기
+				var curTime = curDate.getTime();
+			// curDate = (new Date(curDate)).getTime();
+			var tmpTime = curTime - buyTime;
+			console.log(tmpTime);
+			
+			//milsec을 day로 바꾸기
+			var tmpDate = tmpTime/1000/60/60/24;
+			var tmpDay = parseInt(tmpDate);
+			console.log(tmpDate);
+			alert("구매하신지" + tmpDay + "일이 지났습니다.");
+			
+			if(tmpDay > 7){
+				alert("교환/환불 기간이 경과하였습니다.")
+			}
+		}
+	</script>
+
+</head>
+<body>
+	구입일자 : <input type="date" id="buyDate">
+	<button type="button" onclick="checkDate()">확인</button>
+	
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+<meta charset="UTF-8">
+<title>title name</title>
+<style>
+</style>
+</head>
+<body>
+	<script>
+		var fruits = ["apple", "banana", "peer"];
+		//*개발자도구 console창 적극활용. 이클립스보다 빠르다.
+		//.length >>3
+		//.indexOf ("") 아무것도 없으면 -1이다.
+		//ex fruits.indexOf("peer"); >>2
+		//fruits[2] = "peer";
+		//fruits.push("banana") >> 4
+		//.lastIndexOf("banana") >> 3
+		//.indexOf("banana") >>1
+		//첫번째 인덱스만 반환한다.
+		
+		
+		//**concat()배열 합칠때 쓰는 것.스트링에도 많이 쓴다.
+		var cars = ["아반떼", "소나타", "제네시스"];
+		
+		document.write(fruits + "<br>");
+		document.write(cars + "<br>");
+		document.write("<hr>");
+		document.write(cars.concat(fruits) + "<br>");
+		document.write(cars.sort() + "<br>");
+		document.write(cars.reverse() + "<br>");
+		document.write(fruits.slice(0,1) + "<br>");
+		//slice 인덱스 0부터 인덱스 1전까지.(1미포함.)
+		
+		var name = prompt("사람의 이름을 입력해주세요.");
+		
+		
+	</script>
+</body>
+</html>
