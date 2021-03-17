@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+<meta charset="UTF-8">
+<title>title name</title>
+<style>
+</style>
+</head>
+<body>
+	<script>
+//가위 바위 보 게임을 할 수 있는 프로그램을 작성하시오. 컴퓨터 = 랜덤, 사용자 prompt	
+//	var arr = ["가위","바위","보"];
+	var S = "가위";
+	var R = "바위";
+	var P = "보";
+	var res = "";
+	var even = "비겼습니다.";
+	var a =	prompt("가위, 바위, 보를 선택해주세요");	
+	var b =	parseInt(Math.random()*2+1);
+		if(b == 1){
+			b = S;
+		}else if(b == 2){
+			b = R;
+		}else if(b == 3){
+			b = P;
+		}
+		
+	
+	if(a === "가위") a=S;
+	if(a === "바위") a=R;
+	if(a === "보") a=P;
+	if(b === "가위") b=S;
+	if(b === "바위") b=R;
+	if(b === "보") b=P;
+	
+	//a R	
+	if(a===R && b===R){ 
+		res = even;
+		a = "바위";
+		b = "바위";
+	} 
+	if(a===R && b===S){ 
+		res = "당신이 이겼습니다.";
+		a = "바위";
+		b = "가위";
+	} 
+	if(a===R && b===P){ 
+		res = "컴퓨터가 이겼습니다.";
+		a = "바위";
+		b = "보";
+	} 
+	//a S
+	if(a===S && b===R){ 
+		res = "컴퓨터가 이겼습니다.";
+		a = "가위";
+		b = "바위";
+	} 
+	if(a===S && b===S){ 
+		res = even;
+		a = "가위";
+		b = "가위";
+
+	} 
+	if(a===S && b===P){ 
+		res = "당신이 이겼습니다.";
+		a = "가위";
+		b = "보";
+	} 
+	//a P
+	if(a===P && b===R){ 
+		res = "당신이 이겼습니다.";
+		a = "보";
+		b = "바위";
+	} 
+	if(a===P && b===S){ 
+		res = "컴퓨터가 이겼습니다.";
+		a = "보";
+		b = "가위";
+	} 
+	if(a===P && b===P){ 
+		res = even;
+		a = "보";
+		b = "보";
+	} 
+	document.write("당신은 "+ a +"를 내고 "
+			+ "컴퓨터가 "+ b + "를 내어 "
+			+ "결과는 " + res);
+	//이게 최선이었을까. 메서드 마렵다.
+	</script>
+</body>
+</html>

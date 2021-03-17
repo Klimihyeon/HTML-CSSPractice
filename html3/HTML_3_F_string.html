@@ -23,8 +23,28 @@
 
 	var str1 = "adsDASfasdf";
 	
-//	str1.toLowerCase();
+	str1.toLowerCase(str1);
 //	str1.toUpperCase();
+//  match? 찾아봐.
+
+	document.write('<br>');
+	var s= "one, two, three, four, five"
+	array = s.split(',');
+	for(i = 0; i<array.length; i++){
+		document.writeln(i+'-'+array[i] + '<br>')
+	}
+	//writeln? 별차이 없는데?
+	
+	var str2 = "이휙로, 전윤주, 기타등, 타등등"
+	document.write("str2"+str2 + "<br>");
+	var arr2 = str2.split(",");
+	document.write("arr2" + arr2 + "<br>");
+	document.write("길이 " + arr2.length + "<br>");
+	
+	for(var i=0; i<arr2.length; i++){
+		document.write((i+1) + ")" + arr2[i] + '<br>');
+	}
+	//띄어쓰기..?!	
 	</script>
 </body>
 </html>
