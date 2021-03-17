@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+<meta charset="UTF-8">
+<title>title name</title>
+<style>
+</style>
+</head>
+<body>
+	주민등록번호 : <input type="text" id="jumin">
+	<button type="button" onclick="proc()">확인</button>
+	<hr>
+	연도 : <sapn id="y"></sapn><br>
+	월 : <sapn id="m"></sapn><br>
+	일 : <sapn id="d"></sapn><br>
+	성별 : <sapn id="g"></sapn><br>
+	<hr><hr>
+
+	<script>
+	/* 주민등록번호를 입력받아 생년월일과 성별을 출력한다.*/
+		function proc() {
+
+		var value = document.getElementById("jumin").value;
+		var year = value.substr(0,2);
+		var month = value.substr(2,2);
+			if(month <10){
+				month = value.substr(3,1);
+			}
+		var day = value.substr(4,2);
+			if(day <10){
+				day = value.substr(5,1);
+			}
+		var gender =value.substr(7,1);
+			if(gender == "1" || gender == "3"){
+				if(gender == "3"){
+					year = "20"+ year;
+				}else{
+					year = "19"+ year;			
+				}
+				gender = "남자";
+			}	
+			else if(gender == "2" || gender == "4"){
+				if(gender == "4"){
+					year = "20"+ year;
+				}else{
+					year = "19"+ year;			
+				}
+				gender = "여자";
+			}
+			
+			
+		
+		
+		document.getElementById("y").innerHTML = (year);
+		document.getElementById("m").innerHTML = (month);
+		document.getElementById("d").innerHTML = (day);
+		document.getElementById("g").innerHTML = (gender);
+	}
+	</script>
+	
+</body>
+</html>

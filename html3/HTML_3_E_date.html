@@ -8,7 +8,7 @@
 	<script>
 //1day / 24 = 1hour / 60  = 1minute / 60 = 1sec / 1000 = 1milsec  
 //		var d1 = new Date(2021,7,21,0,0,0);
-		// 0월 부터 시작한다. 7 = 8월이다.2111213331133
+		// 0월 부터 시작한다. 7 = 8월이다.
 		var today = new Date();
 		//날짜가 얼마나 지났는지 확인하려면 밀리세컨으로 바꿔야 한다.
 		var time = today.getTime(); 
@@ -17,7 +17,7 @@
 		document.write(time + "<br>");
 		document.write("<hr>")
 		//3일 뒤 날짜 계산
-		//3일을 시간(millyseconds)으로 변환
+		//3일을 시간(milliseconds)으로 변환
 		var addTime = 3 *24 *60 * 60 *1000;
 		
 		var resultTime = time + addTime;
