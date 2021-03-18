@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+<meta charset="UTF-8">
+<title>title name</title>
+<style>
+</style>
+	<script>
+	/* html요소 찾기 #개발자도구에서 반드시 써볼것!
+	document.getElementById > return value
+	document.getElementsByName > return array //cf.'s'에 주의.
+		- 한개  밖에 없어도 배열로 반환한다.
+	document.getElementsByTagName > return array
+	 */	
+	</script>
+</head>
+<body>
+	<form>
+		<input type="text" id="target" name="userName"> 
+										<!--#tag랑 같은 name이나 id는 바람직하지 않다.-->
+		<button type="button" onclick="proc();">제출</button>
+		
+	</form>
+	<div>무궁화 꽃이 피었습니다.</div>
+		<button type="button" onclick="get();">내용가져오기</button>
+		<button type="button" onclick="set('오냐');">내용바꾸기</button>
+		<!-- 이같은 형식으로 스타일은 물론 속성도 바꿀 수 있다. -->
+		<hr>
+		<img id="image1" alt="sponge" src="../../images/1.png" width="100">
+		<button type="button" onclick="changeImage();">이미지바꾸기</button>
+		<hr>
+		<p id="p1" style="border: 1px solid red;">동해물과 백두산이</p>
+		<button type="button" onclick="changeStyle();">스타일변경</button>
+		
+		
+	<script type="text/javascript">
+	
+	function changeStyle() {
+		document.getElementById("p1").style.color = "gray"; //#다른 스타일에 색이 없으면 이걸로 다 된다.
+		document.getElementById("p1").style.border = "10px dotted red";
+		document.getElementById("p1").style.fontStyle = "italic";
+	}
+	function changeImage() {
+		document.getElementById("image1").src = "../../images/iu.png";
+		
+	}
+	function get() {
+//		document.getElementsByTagName("div");//배열로 반환되긴 하는데.
+		var obj = document.getElementsByTagName("div")[0]; //이렇게 해야 값이 반환된다.
+		alert(obj.innerHTML); //tab이나 enter도 이상한 문자로 표시된다. 
+	}
+	function set(param) {
+	//	document.getElementsByTagName("div")[0].innerHTML = "야"; //하드코딩
+		//하드코딩 말고 뭘 받아보자. 파라미터로.
+		document.getElementsByTagName("div")[0].innerHTML = param; 
+	}
+	function proc() {
+		var obj = document.getElementById("target");
+		alert(obj); //[object HTMLInputElement] : HTML객체인데 INPUT 요소입니다.
+		alert(obj.value);//#t. .value놓고 요소가 무엇인지 찍어봐라. 		
+	}	
+		
+	</script>
+</body>
+</html>
