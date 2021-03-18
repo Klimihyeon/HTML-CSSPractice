@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+<meta charset="UTF-8">
+<title>ANS</title>
+<style>
+</style>
+	<script>
+		function gbb() {
+			var arrGbb = ["가위", "바위", "보"];//0,1,2
+			var comIdx = parseInt(Math.random()*3); //0~2.9999
+
+			var userGbb = document.getElementById("gbb").value; //가위or바위or보
+			var userIdx = arrGbb.indexOf(userGbb);
+			
+			var comGbb = arrGbb[comIdx]; //누가 뭘 냈는지 확인하면 좋잖아.
+			
+			//가위바위보 비교
+			if(comIdx == userIdx){
+				alert("비김\n컴퓨터 :"+comGbb + "사용자 :" + userGbb);
+			}else if(comIdx < userIdx){ //사용자가 이긴경우 (0,1) (0,2) (1,2)
+				//(컴,사) : (0,1) (1,2) (2,0) 컴퓨터보다 유저 인덱스가 큰 경우
+				if(comIdx ==0 && userIdx ==2){//컴퓨터가 이김
+						alert("짐\n컴퓨터 :"+comGbb + "사용자 :" + userGbb);
+				}else{//사용자가 이김
+					alert("이김\n컴퓨터 :"+comGbb + "사용자 :" + userGbb);					
+				}
+			}else if(comIdx > userIdx){ //컴퓨터가 이긴경우 (2,1) (2,2) (1,2)
+				if(comIdx ==2 && userIdx ==0){//사용자가 이김
+					alert("이김\n컴퓨터 :"+comGbb + "사용자 :" + userGbb);					
+				}else{//사용자가 이김
+						alert("짐\n컴퓨터 :"+comGbb + "사용자 :" + userGbb);
+				}
+			}
+		}
+	</script>
+</head>
+<body>
+	<h3>가위바위보</h3>
+	<p>가위, 바위, 보 중 하나를 입력</p>
+	<input type="text" id="gbb">
+	<button type="button" onclick="gbb();">대결</button>
+	<hr>
+	<h3>로또번호 생성</h3>
+	<button type="button" onclick="getLotto();">대결</button>
+	<p id="lottoResult">로또결과</p>
+	<script>
+	function getLotto() {
+		//1~45까지 중복없이 랜덤으로 6개의 숫자 생성
+		var arr =[];
+		
+		while(arr.length < 6){
+			var no = Math.floor(Math.random()*45+1);  // 0 ~ 44.9 > 1 ~ 45.999!
+			//배열에 담기전에 중복 값이 있는지 체크
+			if(arr.indexOf(no) == -1)
+				arr.push(no);
+		}
+		//배열 정렬
+		//arr.sort();그냥 정렬하면 정렬이 확실히 안된다.
+		arr.sort(function(a,b){
+//			alert(a);
+			console.log("a:" + a);
+			console.log("b:" + b);
+			console.log("a-b:" + (a - b));
+			return a - b;
+		}); 
+		//sort메서드 내부 정의, 0보다 크면 b를 앞으로, 0보다 작으면 a를 앞으로
+		//1.무명함수 정의
+		//2.parameter a,b tip. alert으로 찍어봐라. > console.log로 찍어라.
+		//3.return a-b;
+		
+		document.getElementById("lottoResult").innerHTML =arr;
+	}
+	</script>
+</body>
+</html>
