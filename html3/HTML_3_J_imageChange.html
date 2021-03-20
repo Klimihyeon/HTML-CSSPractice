@@ -7,19 +7,17 @@
 </style>
 </head>
 <body>
-	<img id="image1" alt="sponge" src="../../images/iu.png" width="500" onclick="changeImage();">
+	<img id="image1" alt="sponge" src="../../images/lol.jpg" width="500" onclick="changeImage();">
 	<script>
 	function changeImage() {
 
 		var orgSrc = document.getElementById("image1").src;
 		var newSrc;
-		if(orgSrc.indexOf("iu.png") > -1){//검색시 경로가 겹치면 안된다. url로 한다. 상대경로가 아니라.
+		if(orgSrc.indexOf("lol.jpg") > -1){//검색시 경로가 겹치면 안된다. url로 한다. 상대경로가 아니라.
 			
-			newSrc = "../../images/iu2.jpg";
-			alert(orgSrc)
+			newSrc = "../../images/lol3.jpg";
 		}else{
-			newSrc = "../../images/iu.png"
-			alert(orgSrc)
+			newSrc = "../../images/lol.jpg"
 		}
 		
 		document.getElementById("image1").src = newSrc;
