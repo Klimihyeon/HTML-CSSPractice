@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+<meta charset="UTF-8">
+<title>가위바위보</title>
+<style>
+	header{
+		text-align: center;
+	}
+	#leftc{
+		width:50%;
+		float: left;
+	}
+	#rightc{
+		width:50%;
+		float: right;
+	}
+	img{
+		width: 100%;
+	}
+	h3{
+		text-align: center;
+	}
+	p{
+		font-size: 20px;
+		text-align: center;
+		border: 1px solid;
+		clear: both;
+		
+	}
+
+</style>
+	<script>
+			function play() {
+				
+				var arrGbb = ["가위", "바위", "보"];
+				var comIdx = parseInt(Math.random()*3); 
+				var comGbb = arrGbb[comIdx]; 
+				
+				var userGbb = prompt("가위,바위, 보 중 하나를 입력하세요.")
+				var userIdx = arrGbb.indexOf(userGbb);
+				
+				//delete first
+				var arrImgs = document.getElementsByTagName("img");
+				for(var i=arrImgs.length-1; i >= 0 ; i--){
+					arrImgs[i].remove();		
+				}
+				//left add
+				var leftImg = document.createElement("img");
+				"../../images/1_right.jpg"
+				leftImg.src = "../../images/" + comIdx + "_left.jpg";
+				document.getElementById("leftc").appendChild(leftImg);
+				
+				//right add
+				var rightImg = document.createElement("img");
+				rightImg.src = "../../images/" + userIdx + "_right.jpg"
+				document.getElementById("rightc").appendChild(rightImg);
+				
+				var res;
+				
+				if(comIdx == userIdx){
+					res = ("비겼습니다. \n컴퓨터 : "+comGbb +"이고 "  + "사용자 :" + userGbb);
+
+				}else if(comIdx < userIdx){
+					
+					if(comIdx ==0 && userIdx ==2){
+							res = ("졌어요. ㅠㅠ \n컴퓨터 : "+comGbb+"이고 "  + "사용자 :" + userGbb);
+							
+					}else{
+						res = ("이겼당 !! \n컴퓨터 : "+comGbb +"이고 " + "사용자 :" + userGbb);	
+						
+					}
+				}else if(comIdx > userIdx){ 
+					if(comIdx ==2 && userIdx ==0){
+						res = ("이겼당 !! \n컴퓨터 : "+comGbb +"이고 " + "사용자 :" + userGbb);		
+						
+					}else{
+						res = ("졌어요. ㅠㅠ \n컴퓨터 : "+comGbb +"이고 " + "사용자 :" + userGbb);
+							
+					}
+					
+
+				
+				}
+				document.getElementById("result").innerHTML = res;
+			}
+			
+			
+	</script>
+</head>
+<body>
+	<header>
+		<button type="button" onclick="play()">게임시작</button>
+	</header>
+	<div id="leftc">
+	<h3>컴퓨터</h3>
+		<img id="left" alt="" src="../../images/1_left.jpg">
+	</div>
+	<div id="rightc">
+	<h3>You</h3>
+		<img id="right" alt="" src="../../images/1_right.jpg">
+	</div>
+	<p id="result">결과</p>
+</body>
+</html>

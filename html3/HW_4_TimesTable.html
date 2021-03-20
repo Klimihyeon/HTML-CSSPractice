@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>multiple times table</title>
+<style type="text/css">
+	div{
+		text-align: center;
+	}
+	table{
+		width: 200px;
+		height: 100px;
+		margin: 30px;
+	}
+</style>
+</head>
+<script type="text/javascript">
+	
+	function calc() {
+		var no = document.getElementById("times").value;
+		var res;
+		var i=0;
+		var str;
+		var table = document.createElement("textarea");
+		table.cols = 10;
+		table.rows = 15;
+		for(var i = 1; i<10; i++){
+			  res = parseInt(no) * parseInt(i);
+			  
+			  str = no + " * " + i + " = " + res + '\n';
+			var table2 = document.createTextNode(str);
+			table.appendChild(table2);
+		}
+		document.getElementById("textA").appendChild(table); 
+		
+		}
+		
+	
+	
+</script>
+<body>
+	<div>
+			<table>
+				<tr>
+				<td><input id="times" type="text" size="3"></td>
+				<td><h1>단</h1><td>
+				<td><button type="button" onclick="calc()">출력</button></td>
+				</tr>
+				<tr id="textA">
+				<tr>
+			</table>
+	</div>
+</body>
+</html>

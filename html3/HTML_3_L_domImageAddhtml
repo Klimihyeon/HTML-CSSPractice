@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+<meta charset="UTF-8">
+<title>dom</title>
+<style>
+</style>
+	<script>
+		function addtext(t) {
+			var node = document.createTextNode(t);
+			document.getElementById("target").appendChild(node);
+		}
+	//firstChild > firstElementChild
+	//firstChild.date > firstElementChild.textContent
+	//firstChild.nodeValue > firstElementChild.textContent
+		
+		function addImages() {
+		
+			var arr = document.getElementsByTagName("li");
+	
+			//이미지 소스를 가지고 있는 배열
+			var arrImgSrc = ["1.png", "1.png","1.png","1.png","1.png"];
+			
+			for(var i=0; i<arr.length; i++){
+			//이미지 요소를 생성
+				var imgObj = document.createElement('img');
+				imgObj.alt ="웹접근성";
+				imgObj.src ="../../images/" + arrImgSrc[i];
+				imgObj.height ="30";				
+				arr[i].appendChild(imgObj);				
+			}
+		}
+			
+		function proc() {
+			var arrImgs = document.getElementsByTagName("img");
+//	 			arrImgs.remove();이렇게 하면 안된다. 배열이다.
+				for(var i=arrImgs.length-1; i >= 0 ; i--){
+					arrImgs[i].remove();		
+				}
+			}
+		function addImg(obj, fileName){
+/* 			alert(obj); //뭔지 잘 모르겠으면 일단 찍어봐라. HTML LI ELEMENT>>
+			alert(obj.innerHTML); //컴퓨터1
+			alert(obj.id); //temp1 */
+
+			
+ 			var objImg = document.createElement("img");
+			alert(objImg.value);
+			objImg.src = "../../images/" + fileName;
+			objImg.height ="30";
+			obj.appendChild(objImg);
+		}
+
+	</script>
+</head>
+<body>
+	<div id="target">
+		<p id="p1">첫번째 단락</p>
+		<p id="p2">두번째 단락</p>
+	</div>
+	
+	<script type="text/javascript">
+		
+	</script>
+	
+
+	
+	<hr>
+	<button type="button" onclick="addImages()">실행</button>
+	<button type="button" onclick="proc()">삭제</button>
+	<ul>
+			<!--이걸 넣어주고 싶다.	<img alt="" src="../../images/1.png"> -->
+		<li id="temp1" onclick="addImg(this, '1.png')">컴퓨터1</li>
+		<li id="temp2" onclick="addImg(this, '1.png')">식품2</li>
+		<li id="temp3" onclick="addImg(this, '1.png')">호랑이</li>
+		<li id="temp4" onclick="addImg(this, '1.png')">cloud03</li>
+		<li id="temp5" onclick="addImg(this, '1.png')">coffee1</li>
+	</ul>
+	<hr>
+	<div id="target" style="font:20px bold;" onclick="addtext('무궁화 꽃이 피었습니다.')">
+	여기를 클릭하세요
+	</div>
+</body>
+</html>
