@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+	<script type="text/javascript">
+		function res() {
+			var name= document.getElementById("name").value;
+			var gen = document.getElementsByName("gender");
+			var male = document.getElementsByName("gender")[0].checked;
+			var female = document.getElementsByName("gender")[1].checked;
+			if(male == true) gen = document.getElementsByName("gender")[0].value;
+			if(female == true) gen = document.getElementsByName("gender")[1].value;			
+			if(male != true && female != true) gen = "남자여자는 아니란 말";
+
+			var hobby = document.getElementsByName("hobby");
+			var hobbies = [];			
+			var nch;
+			var cnt;
+			var ans;
+			alert(hobby[0]);
+			for(var i = 0; i < hobby.length; i++){			
+				nch = document.getElementsByName("hobby")[i].checked;	
+				if(nch == true){
+					hobbies.push = document.getElementsByName("hobby")[i].value;
+				}
+				else if(nch == false){
+				ans = "하나도 없다는 말이니 인생이 재미 없으시"
+				}
+				
+			}	
+			
+
+			var result = name + "씨!<br>당신은 " + gen + "이고,<br>취미는 "
+						+ ans + "군요!";
+			document.getElementById("result").innerHTML = result;
+		}
+	</script>
+</head>
+
+<body>
+<h1>form 문제2</h1>
+	<form>
+		이름 : <input type="text" id="name"><br><br>
+		성별 :
+		<input type="radio" name="gender" id="man" value="남자">
+	    <label for="man">남자</label>
+	    <input type="radio" name="gender" id="woman" value="여자">
+	    <label for="woman">여자</label><br><br>
+	    취미 : 
+	    <input type="checkbox" name="hobby" id="trip" value="여행">
+		<label for="trip">여행</label>
+		<input type="checkbox" name="hobby" id="read" value="독서">
+		<label for="read">독서</label>
+		<input type="checkbox" name="hobby" id="movie" value="영화감상">
+		<label for="movie">영화감상</label>
+		<input type="checkbox" name="hobby" id="go" value="바둑">
+		<label for="go">바둑</label>
+		<input type="checkbox" name="hobby" id="asianchess" value="장기">
+		<label for="asianchess">장기</label>
+		<input type="checkbox" name="hobby" id="mountain" value="등산">
+		<label for="mountain">등산</label>
+		<input type="checkbox" name="hobby" id="fishing" value="낚시">
+		<label for="fishing">낚시</label>
+	    <br><br>
+	    <button type="button" onclick="res()">결과출력</button>
+	    <div id="result" style="font-size: 20px; border: 1px solid black; height: 300px"></div>
+	</form>
+</body>
+</html>

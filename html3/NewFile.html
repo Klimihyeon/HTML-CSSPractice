@@ -2,60 +2,116 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
-	<script type="text/javascript">
-		function res() {
-			var name= document.getElementById("name").value;
-			var gen = document.getElementsByName("gender");
-			var male = document.getElementsByName("gender")[0].checked;
-			var female = document.getElementsByName("gender")[1].checked;
-			if(gen.length == 0) gen = "성별이 없으세요?";
-
-			var gen = document.getElementsByName("gender").value;		
-			var hobby = document.getElementsByName("hobby").length;
-
-			var hobbies;
-			if(hobby==0){
-				hobbies ="취미가 없군요?";
-			}
-			for (var i = 0; i < hobby.length; i++) {
-				document.getElementsByName("hobby")[i].value;
+<title>practice</title>
+<style type="text/css">
+	header{
+		text-align: center;
+	}
+	#leftc{
+		width:50%;
+		float: left;
+	}
+	#rightc{
+		width:50%;
+		float: right;
+	}
+	img{
+		width: 100%;
+	}
+	h3{
+		text-align: center;
+	}
+	p{
+		font-size: 20px;
+		text-align: center;
+		border: 1px solid;
+		clear: both;	
+	}
+	#right{
+		text-align: right;
+	}
+</style>
+<script type="text/javascript">
+					
+function play() {
+				
+				var arrGbb = ["가위", "바위", "보"];
+				var comIdx = parseInt(Math.random()*3); 
+				var comGbb = arrGbb[comIdx]; 
+				
+				var sct = document.getElementById("gbb").value;
+				var userGbb = arrGbb[sct];
+				var userIdx = sct;
+				
+				//delete first
+				var arrImgs = document.getElementsByTagName("img");
+				for(var i=arrImgs.length-1; i >= 0 ; i--){
+					arrImgs[i].remove();		
 				}
+				//left add
+				var leftImg = document.createElement("img");
+				"../../images/1_right.jpg"
+				leftImg.src = "../../images/" + comIdx + "_left.jpg";
+				document.getElementById("leftc").appendChild(leftImg);
+				
+				//right add
+				var rightImg = document.createElement("img");
+				rightImg.src = "../../images/" + userIdx + "_right.jpg"
+				document.getElementById("rightc").appendChild(rightImg);
+				
+				var res;
+				
+				if(comIdx == userIdx){
+					res = ("비겼습니다. \n컴퓨터 : "+comGbb +"이고 "  + "사용자 :" + userGbb);
 
-			var result = name + "씨!<br>당신은 " + gen + "이고,<br>취미는 "
-						+ hobbies + "이군요!";
-			document.getElementById("result").innerHTML = result;
-		}
-	</script>
+				}else if(comIdx < userIdx){
+					
+					if(comIdx ==0 && userIdx ==2){
+							res = ("졌어요. ㅠㅠ \n컴퓨터 : "+comGbb+"이고 "  + "사용자 :" + userGbb);
+							
+					}else{
+						res = ("이겼당 !! \n컴퓨터 : "+comGbb +"이고 " + "사용자 :" + userGbb);	
+						
+					}
+				}else if(comIdx > userIdx){ 
+					if(comIdx ==2 && userIdx ==0){
+						res = ("이겼당 !! \n컴퓨터 : "+comGbb +"이고 " + "사용자 :" + userGbb);		
+						
+					}else{
+						res = ("졌어요. ㅠㅠ \n컴퓨터 : "+comGbb +"이고 " + "사용자 :" + userGbb);
+							
+					}
+					
+
+				
+				}
+				document.getElementById("result").innerHTML = res;
+			}		
+
+</script>
 </head>
 
-<body>
-<h1>form 문제2</h1>
-	<form>
-		이름 : <input type="text" id="name"><br><br>
-		성별 :
-		<input type="radio" name="gender" id="man" value="남자">
-	    <label for="man">남자</label>
-	    <input type="radio" name="gender" id="woman" value="여자">
-	    <label for="woman">여자</label><br><br>
-	    취미 : 
-	    <input type="checkbox" name="hobby" id="trip" value="여행">
-		<label for="trip">여행</label>
-		<input type="checkbox" name="hobby" id="read" value="독서">
-		<label for="read">독서</label>
-		<input type="checkbox" name="hobby" id="movie" value="영화감상">
-		<label for="movie">영화감상</label>
-		<input type="checkbox" name="hobby" id="go" value="바둑">
-		<label for="go">바둑</label>
-		<input type="checkbox" name="hobby" id="asianchess" value="장기">
-		<label for="asianchess">장기</label>
-		<input type="checkbox" name="hobby" id="mountain" value="등산">
-		<label for="mountain">등산</label>
-		<input type="checkbox" name="hobby" id="fishing" value="낚시">
-		<label for="fishing">낚시</label>
-	    <br><br>
-	    <button type="button" onclick="res()">결과출력</button>
-	    <div id="result" style="font-size: 20px; border: 1px solid black; height: 300px"></div>
-	</form>
-</body>
+	<body>
+	<header>
+		<button type="button" onclick="play()">게임시작</button>
+	</header>
+	<div id="leftc">
+	<h3>컴퓨터</h3>
+		<img id="left" alt="" src="../../images/1_left.jpg">
+	</div>
+	<div id="rightc">
+	<h3>You</h3>
+		<img id="right" alt="" src="../../images/1_right.jpg">
+	</div>
+	<div id="right">
+		<label>골라 GBB.</label>
+		<select name="tgd" id="gbb">
+			<option value="0">가위</option>
+			<option value="1">바위</option>
+			<option value="2">보</option>
+		</select>
+	</div>
+
+	<p id="result">결과</p>	
+	</body>
 </html>
