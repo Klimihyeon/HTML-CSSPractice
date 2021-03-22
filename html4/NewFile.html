@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+	<style type="text/css">
+		div{
+		width : 200px;
+		height : 200px;
+		border :1px solid red;
+		}
+			
+	</style>
+	<script type="text/javascript">
+		function drag(ev) {
+			ev.preventDefault();
+			console.log(ev);//개발자 콘솔찍은걸로 확인해보자
+			console.log(ev.target);
+			ev.dataTransfer.setData("txet", ev.target.id); 
+		}
+		
+		function drop(ev) {
+			console.log("drop tar" + ev.target);
+			var data = ev.dataTransfer.getData("text")
+			console.log("getda" + data);	
+		}
+		
+		function allowDrop(ev) {
+			ev.preventDefault();			
+		}
+		
+		
+		
+	</script>
+	
+</head>
+<body>
+	<div ondrop="drop(event)" ondragover="allowDrop(event)">이미지를 옮겨올 영역</div>
+	<br>
+	<img alt="" src="../images/1.png" draggable="true" ondragstart="drag(event)">
+
+</body>
+</html>
