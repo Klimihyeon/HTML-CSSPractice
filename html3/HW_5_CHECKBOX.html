@@ -18,18 +18,17 @@
 			var nch;
 			var cnt;
 			var ans;
-			alert(hobby[0]);
 			for(var i = 0; i < hobby.length; i++){			
 				nch = document.getElementsByName("hobby")[i].checked;	
 				if(nch == true){
-					hobbies.push = document.getElementsByName("hobby")[i].value;
+					hobbies += document.getElementsByName("hobby")[i].value + " ";
 				}
 				else if(nch == false){
 				ans = "하나도 없다는 말이니 인생이 재미 없으시"
 				}
 				
-			}	
-			
+			}ans = hobbies;	
+			alert(ans);
 
 			var result = name + "씨!<br>당신은 " + gen + "이고,<br>취미는 "
 						+ ans + "군요!";
