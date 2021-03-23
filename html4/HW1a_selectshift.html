@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+	<style type="text/css">
+		/* div{
+		border:1px solid;}
+		 */div.left{
+			width:calc(50% - 50px);
+			height: 200px;
+			float: left;
+			text-align: right;
+			margin-bottom:50px;
+		}
+		div.center{
+			width:100px;
+			height: 200px;
+			float: left;
+			text-align: center;			
+			margin-bottom:50px;
+
+		}
+		div.right{
+			width:calc(50% - 50px);
+			height: 200px;
+			float:right;
+			text-align: left;
+			margin-bottom:50px;
+		}
+		div.bottom{
+			clear: both;
+			text-align: center;
+		}
+		select{
+			height: 200px;
+			width: 150px;
+		}
+		button{
+			width: 30px;
+		}
+		div.bottom button{
+			width: 100px;
+		}		
+	</style>
+	<script type="text/javascript">
+	function moveRight(param) {
+		
+		var leftSel = document.getElementById("left");
+		var rightSel = document.getElementById("right");
+		
+//		leftSel.length : select의 option개수
+//		leftSel[i] : select의 i번째 option
+		for(var i=0; i < leftSel.length; i++){
+//			leftSel[i].selected; 선택이 된 상태면 true, 아니면 false
+//			i번재 옵션이 선택되었는지 여부 확인
+			if(param == undefined){
+				if(leftSel[i].selected){
+					rightSel.append(leftSel[i]);
+					i--;
+				}
+			}else{
+				rightSel.append(leftSel[i]);
+				i--;
+			}
+		
+		}
+	}	
+	function moveLeft(param) {
+		
+		
+	}
+	function addText() {
+		//step1. 중복된 값이 있는지 확인하기
+		var str = document.getElementById("addText").value;
+		var sel = document.getElementById("left");
+		for(var i=0; i<sel.length; i++){
+			if(sel[i].innerHTML == str){
+				alert("'" + str + "' 은(는) 이미 등록된 값입니다.")
+				// 홍길동은 이미 등록된 값입니다.
+				
+				document.getElementById("addText").focus();
+				return;
+			}
+		}
+		
+		
+		//step2. 중복된 값이 없으면 추가하기
+		var str = document.getElementById("addText").value;
+		
+		var ele = document.createElement("option");
+		ele.innerHTML = str;
+		
+		// 왼쪽 셀렉트 박스에 옵션 추가하기
+		document.getElementById("left").appendChild(ele);
+		//입력란을 빈값으로 초기화 시키기
+		document.getElementById("addText").value = "";
+		//입력란으로 포커스 주기
+		document.getElementById("addText").focus();
+		
+	}
+	
+	</script>
+	
+</head>
+<body>
+	<div class="top"><h2>객체 예제</h2></div>
+	<div class ="left">
+		<select id="left" multiple="multiple">
+			<option>text1</option>
+			<option>text2</option>
+			<option>text3</option>
+			<option>text4</option>
+		</select>
+	</div>
+	<div class ="center">
+		<div>
+		<button type="button" onclick="moveRight()">&gt;</button><br>
+		<button type="button" onclick="moveRight('all')">&gt;&gt;</button><br>
+		<button type="button" onclick="moveleft()">&lt;</button><br>
+		<button type="button" onclick="moveleft('all')">&lt;&lt;</button><br>
+		</div>
+	</div>
+	<div class ="right">
+		<select id="right" multiple="multiple">
+			<option>text</option>
+			<option>text</option>
+		</select>
+	</div>
+	<div class ="bottom">
+		<input type="text" id="addText">
+		<button type="button" onclick="addText()">추가</button>
+	</div>
+</body>
+</html>
