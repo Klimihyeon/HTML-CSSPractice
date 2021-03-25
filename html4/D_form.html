@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<script type="text/javascript">
+		function checkEmpty() {
+			var ele = document.getElementById("userName");
+			if(ele.value.trim().length == 0){
+				alert("이름이 입력되지 않았습니다.");
+				ele.focus(); //여기다 포커스 주고
+				return; // 끝내라. 다시 해와<-
+				//코드를 줄이는 요령, ele로 요소 잡아서, value, 받고, focus()이런거 주는거다. 
+				//공백을 줄여줘라. trim().
+			}
+		}
+		//이름 : 2~5
+		//생일 ~10자
+		//아이디 6~8자.
+		//휴대폰 ~13자.
+		
+		function checkLength() {
+			var ele = document.getElementById("userId");
+			if(ele.value.length < 6|| ele.value.length >8){
+				alert("아이디는 6~8글자 입니다.");
+				ele.value = ""; //다시쓰라그래.
+				ele.focus();
+				return;
+			}
+			
+		}
+		function validate() {
+			//빈값이 있는 지 체크하고
+			//자리수를 체크
+			//전체 검색하는건 개발자 입장, 사용자 입장에서는 하나씩 하나씩 하는게 좋다.
+			
+/* 				for(i=0; i<arr.length; i++){
+					var ele = document.getElementById("userName");
+					
+					if(ele.value.trim().length == 0){
+						alert( arr[i] + "이 입력되지 않았습니다.");
+						ele.focus();
+						return;
+					}
+				
+					if(ele.value.length < 2|| ele.value.length >5){
+						alert("2~5글자를 입력하세요.");
+						ele.focus();
+						return;
+					}cnt++;
+ */					
+					//정규식 note할 것.
+/* 					var ele = document.getElementById("userCel");
+					var regExp = /^\d{3}-?\d{3,4}-?\d{4}$/;
+					if(ele.value.match(regExp)){
+						alert("정상");
+						return;
+					}else{
+						alert("전화번호가 오류입니다.");
+						ele.focus();
+						return;
+					}
+ */					var ele = document.getElementById("userEmail");
+					var regExp = /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@\w([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/;
+					if(ele.value.match(regExp)){
+						alert("정상");
+						return;
+					}else{
+						alert("이메일이 오류입니다.");
+						ele.focus();
+						return;
+					}
+					
+				}
+		
+		
+		
+		
+	</script>
+	
+	<style type="text/css">
+	</style>
+
+</head>
+<body>
+	<h3>회원가입</h3>
+	<form>
+		이름 : <input type="text" id="userName"><br>
+		주소 : <input type="text" id="userAddr"><br>		
+		생일 : <input type="date" id="userBir"><br>	
+		아이디(6~8문자) : <input type="text" id="userId"><br>		
+		이메일 : <input type="email" id="userEmail"><br>
+		휴대폰 : <input type="text" id="userCel"><br>
+		<button type="submit">확인(submit)</button>
+		<button type="button" onclick="checkEmpty()">공백확인</button>
+		<br>
+		<button type="button" onclick="checkLength()">길이확인</button>
+		<button type="button" onclick="validate()">값확인</button>
+	</form>
+
+</body>
+</html>
