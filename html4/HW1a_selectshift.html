@@ -67,7 +67,25 @@
 		}
 	}	
 	function moveLeft(param) {
+		var leftSel = document.getElementById("left");
+		var rightSel = document.getElementById("right");
 		
+//		leftSel.length : select의 option개수
+//		leftSel[i] : select의 i번째 option
+		for(var i=0; i < rightSel.length; i++){
+//			leftSel[i].selected; 선택이 된 상태면 true, 아니면 false
+//			i번재 옵션이 선택되었는지 여부 확인
+			if(param == undefined){
+				if(right[i].selected){
+					leftSel.append(rightSel[i]);
+					i--;
+				}
+			}else{
+				leftSel.append(rightSel[i]);
+				i--;
+			}
+		
+		}
 		
 	}
 	function addText() {
@@ -117,8 +135,8 @@
 		<div>
 		<button type="button" onclick="moveRight()">&gt;</button><br>
 		<button type="button" onclick="moveRight('all')">&gt;&gt;</button><br>
-		<button type="button" onclick="moveleft()">&lt;</button><br>
-		<button type="button" onclick="moveleft('all')">&lt;&lt;</button><br>
+		<button type="button" onclick="moveLeft()">&lt;</button><br>
+		<button type="button" onclick="moveLeft('all')">&lt;&lt;</button><br>
 		</div>
 	</div>
 	<div class ="right">

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+	<style type="text/css">
+		div.box{
+			background-color: #AAAAAA;
+			border: 1px solid #999999;
+			margin-bottom: 10px;
+		}
+		#divInfo{
+			background-color: white;
+			border: 1px solid #999999;
+			height:100px;
+		}
+		img{
+			height: 100px;
+			display:none;
+			
+		}
+/* 		display none을 하면 안보인다.  */
+		textarea{
+			width: 99%;
+		}
+
+	</style>
+	<script type="text/javascript">
+		function readFile() {
+			var files = document.getElementById("inputFile").files;
+			if(files.length < 1){
+				alert("선택된 파일이 없습니다.");
+				return;
+			}
+			
+			var file = files[0];
+			
+			//파일 정보 가져오기
+			var str = " 내 파일명 " +	file.name + "<br>"
+					+ " 파일유형 " + file.type + "<br>"
+					+ " 파일크기 " + file.size + "<br>"
+					+ " 수정일시 " + file.lastModifiedDate+ "<br>";
+			document.getElementById("divInfo").innerHTML = str;
+			
+			
+			//파일 읽기 결과 출력
+			
+			
+			// 1. 이미지인 경우 - dataURL
+			//	indexOf = str에서도 쓸 수 있음.
+			//	"image/png".indexOf("image")==0 > true. console.chk
+			var reader = new FileReader();
+			if(file.type.indexOf("image")==0){
+//				if(file.type.match("image")){} or substr
+				reader.readAsDataURL(file);
+			}else{
+				reader.readAsText(file);				
+			}
+			
+			reader.onload = function () {
+				documnet.getElementById("taResult") = reader.result; 
+			}
+			//이미지인 경우
+			var objImg = document.getElementById("imgResult");
+			
+			if(file.type.indexOf("image")==0){
+				objImg.src = reader.result;
+				objImg.alt = file.name;
+				objImg.style.display = "inline";		
+			}else{s
+				objImg.style.display = "none";		
+			}
+			
+			
+			// 2. 이미지가 아닌 경우
+			
+				
+		}
+	
+	</script>
+
+</head>
+	<body>
+		<!-- 파일 읽어오는 곳 -->
+		<div class="box">
+			<input type="file" id="inputFile">
+			<button type="button" onclick="readFile()">읽기</button>
+		</div>		
+		<!-- 텍스트 결과 출력 -->
+		<div class="box">
+			<h3>결과출력(FileReader 객체)</h3>
+			<p>이미지 파일일 경우에는 DataURL형식으로, 아닌 경우에는 Text형식으로</p>
+			<textarea rows="10" cols="" id="taResult"></textarea>
+		</div>
+		
+		<!-- 결과 출력 영역 : 이미지랑 파일 정보 -->
+		<div class="box">
+			<h3>파일정보(file객체)</h3>
+			<p>이미지 파일일 경우에는 이미지가 표시되고, 아닌 경우에는 이미지가 표시 되지 않는다.</p>
+			<img id="imgResult" alt="" src="../images/1.png">
+			<br>
+			<div id="divInfo"></div>	
+		</div>
+		
+		
+	</body>
+</html>
