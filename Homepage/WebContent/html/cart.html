@@ -1,0 +1,74 @@
+
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+	<meta charset="UTF-8">
+	<title>cart</title>
+	<style type="text/css">
+		fieldset {
+			width: 550px;
+			text-align: center;
+		}
+		table {
+			width: 600px;
+			min-width: 700px;
+			padding:5px 0 5px 0;
+			border: 1px solid black;
+			letter-spacing: 2px;
+			height: auto;
+			}
+		legend{
+			color:red;
+			}
+		th, td {
+			width : 150px;
+			border: 1px solid black;
+		}
+	</style>
+ </head>
+ <body>
+ 		
+	 <form>
+		 <fieldset>
+		 	<legend>Cart</legend>
+			<table>
+				<tr>
+					<th><h4>품목</h4></th>
+					<td><h4>가격</h4></td>
+					<td><h4>수량</h4></td>
+					<td><h4>합계</h4></td>
+				</tr>
+				<tr>
+					<th>한성컴퓨터</th>
+					<td>price 1,000$</td>
+					<td><input type="number" maxlength="20" min="0" max="10" step="1"></td>
+					<td><input type="text" maxlength="20"></td>
+				</tr>
+				<tr>
+					<th>LG gram</th>
+					<td>price 1,000$</td>
+					<td><input type="number" maxlength="20" min="0" max="10" step="1"></td>
+					<td><input type="text" maxlength="20"></td>
+				</tr>
+				<tr>
+					<th>I-Mac</th>
+					<td>price 1,000$</td>
+					<td><input type="number" maxlength="20" min="0" max="10" step="1"></td>
+					<td><input type="text" maxlength="20"></td>
+				</tr>
+				<tr>
+					<th></th>
+					<td></td>
+					<td><input type="number" maxlength="20" min="0" max="10" step="1"></td>
+					<td><input type="text" maxlength="20"></td>
+				</tr>
+			 </table>
+		</fieldset>
+		<button type="button" value="calc">계산하기</button>
+		<button type="submit">계산하기</button>
+		<button type="reset">초기화</button>
+	</form>
+	<br>
+	<a href="main.html">Back to Home</a>
+</body>
+</html>
